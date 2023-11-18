@@ -40,6 +40,6 @@ Description: Asynchronous FIFO, with **wclk** and **rclk**, synchronous write, s
 
 ### Handshake_syn.v
 
-![Handshake_Synchronizer](pics/Handshake_Synchronizer.png)
+![Handshake_Synchronizer](pics/Handshake_synchronizer.png)
 
 Description: Handshake synchronizer.
