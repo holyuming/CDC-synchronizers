@@ -2,12 +2,12 @@ module Handshake_syn #(parameter WIDTH=32) (
     sclk,
     dclk,
     rst_n,
-    sready, // it means that din is valid
+    sready, // source din is valid
     din,
-    dbusy,
-    sidle,
+    dbusy,  // destination is busy
+    sidle,  // source is idle
     dvalid,
-    dout,
+    dout
 );
 
 input sclk, dclk;

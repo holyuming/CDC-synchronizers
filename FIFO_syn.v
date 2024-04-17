@@ -50,7 +50,7 @@ end
 
 always @(posedge wclk or negedge rst_n) begin
     if (!rst_n) begin
-        wbin    <= 0; // binary code with extra bit, the actual waddr to sram, the leading bit of wbin is to indicat whether fifo is full or empty
+        wbin    <= 0; // binary code with extra bit, the actual waddr to sram, the leading bit of wbin is to indicate whether fifo is full or empty
         wptr    <= 0; // gray code with extra bit
         wfull   <= 0;
     end else begin
@@ -58,7 +58,7 @@ always @(posedge wclk or negedge rst_n) begin
         wptr    <= n_wptr;
 
         // next pointer where i'm gonna write == next pointer where i'm gonna read 
-        wfull   <= (n_wptr == {~wq2_rptr[ASIZE:ASIZE-1], wq2_rptr[ASIZE-2:0]}); // it is equivalent to {n_waddr[MSB] != raddr[MSB], n_waddr[REST] == raddr[REST]}
+        wfull   <= (n_wptr == {~wq2_rptr[ASIZE:ASIZE-1], wq2_rptr[ASIZE-2:0]}); // it is equivalent to {n_wbin[MSB] != rbin[MSB], n_wbin[REST] == rbin[REST]}
     end
 end
 
